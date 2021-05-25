@@ -8,6 +8,16 @@ npx sequelize-cli model:generate --name product --attributes name:string,price:f
 
 npx sequelize-cli model:generate --name category --attributes name:string,description:string,url:string
 
+Order to seed:
+1)users - npx sequelize-cli seed:generate --name some-users
+2)orders - npx sequelize-cli seed:generate --name some-orders
+3)categories - npx sequelize-cli seed:generate --name some-categories
+4)products - npx sequelize-cli seed:generate --name some-products
+5)orderProducts - npx sequelize-cli seed:generate --name some-orderProducts
+
+
+
+
 table Names:
 users
 orders
