@@ -12,10 +12,22 @@ module.exports = {
         allowNull: false,
         unique: true,
         type: Sequelize.INTEGER,
+        references: {
+          model: "orders",
+          key: "id",
+        },
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
       },
       productId: {
         allowNull: false,
         type: Sequelize.INTEGER,
+        references: {
+          model: "products",
+          key: "id",
+        },
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
       },
       quantity: {
         allowNull: false,
