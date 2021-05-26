@@ -5,13 +5,10 @@ const { Router } = require("express");
 const Order = require("../models").order;
 const OrderProduct = require("../models").orderProduct;
 
-//Import authMiddleware from path/file
-const authMiddleware = require("../auth/middleware");
-
 //Create a new Router instance.
 const router = new Router();
 
-//Create new empty order: `POST /new_order`
+//Create new empty order: `POST /`
 router.post("/", async (req, res, next) => {
   try {
     console.log("From orderRouter: I got a request to create a order");
@@ -47,7 +44,22 @@ router.post("/:orderId", async (req, res, next) => {
     });
     res.json(addProduct);
   } catch (e) {
-    next("From usersRouter catch/try: ", e);
+    next("From orderRouter catch/try: ", e);
+  }
+});
+
+//See all products on my order: `GET /orders/:orderId`
+router.get("/:orderId", async (req, res, next) => {
+  try {
+    const orderId = req.params.orderId;
+    console.log("I got a request: Show all products on my order#", orderId);
+    const productsOnMyOrder = await OrderProduct.findAll({
+      where: { orderId: orderId },
+      attributtes: ["productId"],
+    });
+    res.send(productsOnMyOrder);
+  } catch (e) {
+    next("From orderRouter catch/try: ", e);
   }
 });
 

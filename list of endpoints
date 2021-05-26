@@ -11,11 +11,11 @@ List of Endpoints:
 
 5) Create new empty order: `POST /orders/` - ok
 
-6) Add products my order: `POST /orders/:orderId
+6) Add products to my order: `POST /orders/:orderId -ok
 
-7) See all products on my order: `GET /orders/:orderId`
+7) See all products on my order: `GET /orders/:orderId` - ok
 
-8) Admin add new product to shop: `POST /products/new_product`
+8) Admin add new product to shop: `POST /products/` - ok
 
 List of routers:
 1)auth
