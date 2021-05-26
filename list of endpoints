@@ -7,11 +7,11 @@ List of Endpoints:
 
 3) Sign up: `POST /new_user` - ok
 
-4) Sig in: `POST /auth/login`
+4) Sig in: `POST /auth/login` - OK
 
-5) Create new empty order: `POST /orders/new`
+5) Create new empty order: `POST /orders/` - ok
 
-6) Add products my order: `POST /orders/:orderId/add_product
+6) Add products my order: `POST /orders/:orderId
 
 7) See all products on my order: `GET /orders/:orderId`
 

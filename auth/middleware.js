@@ -5,6 +5,7 @@ const User = require("../models").user;
 const { toData } = require("./jwt");
 
 async function auth(req, res, next) {
+  console.log("I got request from middleware!");
   // 1. check for authorization header and "split" it.
   const auth =
     req.headers.authorization && req.headers.authorization.split(" ");
@@ -14,7 +15,7 @@ async function auth(req, res, next) {
     try {
       //try to decode the token
       const data = toData(auth[1]);
-      console.log("what is data?", data); //{ userId: 1} it returns the user!
+      console.log("From middleware what is data?", data); //{ userId: 1} data.userId returns the user!
 
       // 3. Use the value returned from "toData()" to look for that user in your database with User.findByPk
       const user = await User.findByPk(data.userId); // data.userId returns a number id
