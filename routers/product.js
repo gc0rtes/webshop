@@ -5,7 +5,7 @@ const Product = require("../models").product;
 //Create a new Router instance.
 const router = new Router();
 
-//Endpoint Show all products: `GET /products`
+//Endpoint all products: `GET /products`
 router.get("/", async (req, res) => {
   try {
     console.log("I got a request: Show all products");
