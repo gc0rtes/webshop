@@ -1,8 +1,12 @@
 //Import Express
 const express = require("express");
+
 //Import routers files
 const productRouter = require("./routers/product");
 const categoryRouter = require("./routers/category");
+const userRouter = require("./routers/user");
+const authRouter = require("./routers/auth");
+
 //Import authMiddleware from path/file
 
 //Create a new express server named app
@@ -16,6 +20,8 @@ app.use(jsonParser);
 //Create app returns/path to the routers
 app.use("/products", productRouter);
 app.use("/categories", categoryRouter);
+app.use("/users", userRouter);
+app.use("/auth", authRouter);
 
 //Define the port
 const port = process.env.PORT || 4000; // "const port =4000 ||process.env.PORT" is used when go to deploy on Heruku

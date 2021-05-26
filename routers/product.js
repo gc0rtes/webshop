@@ -6,13 +6,13 @@ const Product = require("../models").product;
 const router = new Router();
 
 //Endpoint all products: `GET /products`
-router.get("/", async (req, res) => {
+router.get("/", async (req, res, next) => {
   try {
     console.log("I got a request: Show all products");
     const allUsers = await Product.findAll();
     res.send(allUsers);
   } catch (e) {
-    console.log("From productRouter catch/try: ", e.message);
+    next("From productRouter catch/try: ", e.message);
   }
 });
 

@@ -3,9 +3,9 @@ List of Endpoints:
 
 1) Show all products: `GET /products` -ok
 
-2) Show products by category: `GET /categories/:categoryId/products`
+2) Show products by category: `GET /categories/:categoryId/products` - ok
 
-3) Sign up: `POST /auth/new_user`
+3) Sign up: `POST /new_user` - ok
 
 4) Sig in: `POST /auth/login`
 

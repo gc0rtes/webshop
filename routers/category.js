@@ -21,7 +21,7 @@ router.get("/:categoryId", async (request, response, next) => {
       response.send(categoryById);
     }
   } catch (e) {
-    console.log("From categoryRouter catch/try: ", e.message);
+    next("From categoryRouter catch/try: ", e);
   }
 });
 
