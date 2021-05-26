@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   orderProduct.init(
     {
-      orderId: { type: DataTypes.INTEGER, allowNull: false, unique: true },
+      orderId: { type: DataTypes.INTEGER, allowNull: false },
       productId: { type: DataTypes.INTEGER, allowNull: false },
       quantity: { type: DataTypes.INTEGER, allowNull: false },
     },
