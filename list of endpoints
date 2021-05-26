@@ -1,0 +1,25 @@
+
+List of Endpoints:
+
+1) Show all products: `GET /products` -ok
+
+2) Show products by category: `GET /categories/:categoryId/products`
+
+3) Sign up: `POST /auth/new_user`
+
+4) Sig in: `POST /auth/login`
+
+5) Create new empty order: `POST /orders/new`
+
+6) Add products my order: `POST /orders/:orderId/add_product
+
+7) See all products on my order: `GET /orders/:orderId`
+
+8) Admin add new product to shop: `POST /products/new_product`
+
+List of routers:
+1)auth
+2)product
+3)order
+
+
